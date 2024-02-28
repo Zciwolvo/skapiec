@@ -33,3 +33,7 @@ Aplikacja desktopowa > Server > Scrapper > Server > Baza danych > Aplikacja desk
 - URL obrazu
 - Opis
 - Data aktualizacji
+
+| TAB1    | TAB2     | TAB3     |
+| ------- | -------- | -------- |
+| rekord1 | rekord 2 | rekord 3 |

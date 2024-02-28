@@ -27,11 +27,3 @@ def scrapping(fraza):
         return None
     
 
-search_phrase = input("Podaj frazę: ")
-result = scrapping(search_phrase)
-if result:
-    for item in result:
-        skURL = item['URL wewnętrzne'] if item['URL wewnętrzne'] else "Brak"
-        print(f"Nazwa: {item['name']}, Cena: {item['price']} zł, URL wewnętrzne: {"skapiec.pl"+skURL}")
-else:
-    print("Brak wyników")
