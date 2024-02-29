@@ -46,16 +46,18 @@ def scrapDescription(skURL):
         return cleaned_description
     else:
         return None
+    
+if __name__ == '__main__':
 
-search_phrase = input("Podaj frazę: ")
-result = scrapping(search_phrase) 
+    search_phrase = input("Podaj frazę: ")
+    result = scrapping(search_phrase) 
 
-if result:
-    for item in result:
-        skURL = item['URL wewnętrzne'] if item['URL wewnętrzne'] else "Brak"
-        sklepURL = item['URL zewnętrzne'] if item['URL zewnętrzne'] else "brak"
-        description = scrapDescription(skURL)
-        if description:
-            print(f"Nazwa: {item['name']}, Cena: {item['price']} zł, URL wewnętrzne: {'skapiec.pl'+skURL}, URL zewnętrzne: {sklepURL}, Zdjęcie: {item['photo']},\nOpis: {description[0]}\n")
-else:
-    print("Brak wyników")
+    if result:
+        for item in result:
+            skURL = item['URL wewnętrzne'] if item['URL wewnętrzne'] else "Brak"
+            sklepURL = item['URL zewnętrzne'] if item['URL zewnętrzne'] else "brak"
+            description = scrapDescription(skURL)
+            if description:
+                print(f"Nazwa: {item['name']}, Cena: {item['price']} zł, URL wewnętrzne: {'skapiec.pl'+skURL}, URL zewnętrzne: {sklepURL}, Zdjęcie: {item['photo']},\nOpis: {description[0]}\n")
+    else:
+        print("Brak wyników")

@@ -1,102 +1,242 @@
 [
   {
-    "Name": "Rower stacjonarny OXYGEN YELLOW",
-    "price": "599.00 zł",
-    "url": "/site/cat/2207/comp/921775680"
+    "id": 1,
+    "search": "łódź",
+    "name": "Lego CITY Łódź badacza Arktyki 60368",
+    "price": "534.50 zł",
+    "price_lowest": "534.50 zł",
+    "external_url": "https://skapiec.pl/site/red/8177/923413987/270034085",
+    "internal_url": "/site/cat/2600/comp/923413987",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/DUaktk3b2ZmZXJzLzIzMzg5NTkyMzFfMmFiNzM3OWQ1ZGFkYjhlZjVhOGVlNWJlNmEyNmViNjgud2VicJOVAsy0AMLDlQIAzLTCw5MJpjRkM2QzMwY/lego-city-lodz-badacza-arktyki-60368.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Kaisda K2P Pro Czarno-niebieski",
-    "price": "4 999.00 zł",
-    "url": "/site/cat/3681/comp/923007307"
+    "id": 2,
+    "search": "łódź",
+    "name": "Polfa ŁÓDŹ Sensilab Q10 Sensitive 30 tabletek do ssania 8655401",
+    "price": "32.49 zł",
+    "price_lowest": "32.49 zł",
+    "external_url": "https://skapiec.pl/site/red/5782/106717702/263815382",
+    "internal_url": "/site/cat/2309/comp/106717702",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/z1nktk3b2ZmZXJzLzIzMDU1MzcxOTlfZDEwMGE4NzAwOTc0NWM5M2Y1M2U5ODQ0MDEwYjVjMWQud2VicJOVAsy0AMLDlQIAzLTCw5MJpmYyZjlkOQY/polfa-lodz-sensilab-q10-sensitive-30-tabletek-do-ssania-8655401.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "PVY Z20 Pro Biały",
-    "price": "3 099.00 zł",
-    "url": "/site/cat/3681/comp/922972300"
+    "id": 3,
+    "search": "łódź",
+    "name": "Uriage POLFA ŁÓDŹ Eau Thermale woda termalna 50 ml",
+    "price": "19.95 zł",
+    "price_lowest": "19.95 zł",
+    "external_url": "https://skapiec.pl/site/red/17080/108178729/276987814",
+    "internal_url": "/site/cat/178/comp/108178729",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/sAyktk3b2ZmZXJzLzIzMjQ0ODA3MjNfMjc5Y2YwNjNiYjc3OWVlNzI4Mzg3OGM0MjAxZWE1ODAud2VicJOVAsy0AMLDlQIAzLTCw5MJpmU5ODM1NgY/uriage-polfa-lodz-eau-thermale-woda-termalna-50-ml.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "GUNAI MX25 Czarny",
-    "price": "5 999.00 zł",
-    "url": "/site/cat/3681/comp/923123822"
+    "id": 4,
+    "search": "łódź",
+    "name": "OFF-ROAD wojskową ciężarówką Łódź 60 minut TAAK_ORWC6",
+    "price": "849.00 zł",
+    "price_lowest": "849.00 zł",
+    "external_url": "https://skapiec.pl/site/red/9769/898430910/229241952",
+    "internal_url": "/site/cat/3250/comp/898430910",
+    "photo": "https://i4.skapiec.pl/1/kdyktkraW1hZ2VzLzUxZGNhYzMxNjMyMDAzNThmYTQ3NjBlNDAwMGEzYWM0LmpwZ5OVAsy0AMLDlQIAzLTCw5MJpjI1MjkxNAY/off-road-wojskowa-ciezarowka-lodz-60-minut-taak-orwc6.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Rower Składany 20 Składak Bagażnikiem Lekki Miasto",
-    "price": "1 149.00 zł",
-    "url": "/site/cat/2215/comp/881564692"
+    "id": 5,
+    "search": "łódź",
+    "name": "Polfa ŁÓDŹ HELICOgastrin x 14 kaps",
+    "price": "45.76 zł",
+    "price_lowest": "45.76 zł",
+    "external_url": "https://skapiec.pl/site/red/15732/883893577/247705832",
+    "internal_url": "/site/cat/2372/comp/883893577",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/Kn-ktk3b2ZmZXJzLzIzMjU0ODY1ODdfOGIwNWNmY2EzODcwODkwYzAxMmFlMGM3NGViM2E2MDUud2VicJOVAsy0AMLDlQIAzLTCw5MJpmQwYTAyYgY/polfa-lodz-helicogastrin-x-14-kaps.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "KAISDA K7S Electric Bike 20x1.95 inch Tire 36V 350W Motor 25-28km/h Max Speed 12.5Ah Battery 45-75km Range 120kgLoadBlue",
-    "price": "2 499.00 zł",
-    "url": "/site/cat/3681/comp/933440940"
+    "id": 6,
+    "search": "łódź",
+    "name": "Polfa ŁÓDŹ SIBOSgastrin x 20 kaps",
+    "price": "41.90 zł",
+    "price_lowest": "41.90 zł",
+    "external_url": "https://skapiec.pl/site/red/15732/897687893/232323277",
+    "internal_url": "/site/cat/2372/comp/897687893",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/ojMktk3b2ZmZXJzLzIzMjU1MTYzMjNfMmQwZTc3NGE3ZmMzYmJlOWE1YmFkMDc0YTc2MzJmMWUud2VicJOVAsy0AMLDlQIAzLTCw5MJpjJiODU5ZQY/polfa-lodz-sibosgastrin-x-20-kaps.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Elektryczny Rower Górski KuKirin V3, Silnik 350W, Opony Pneumatyczne 27,5 Cali, Wyjmowalna Bateria 15Ah, 90km",
-    "price": "2 999.00 zł",
-    "url": "/site/cat/3681/comp/933440916"
+    "id": 7,
+    "search": "łódź",
+    "name": "LEGO Friends Łódź ratunkowa 41381",
+    "price": "357.12 zł",
+    "price_lowest": "357.12 zł",
+    "external_url": "https://skapiec.pl/site/red/16466/867501429/257593434",
+    "internal_url": "/site/cat/2600/comp/867501429",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/Cv2ktk3b2ZmZXJzLzIzMTUxNTIwNjZfNDRjYWYzYWEwMThjY2Y2NjRhMWQ4NDg3NGNlMjdlMWIud2VicJOVAsy0AMLDlQIAzLTCw5MJpjM0Nzc5NwY/lego-friends-lodz-ratunkowa-41381.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Składany Miejski Rower Elektryczny KuKirin V2, Opony 20 Cali, Wyjmowalna Bateria 7,5Ah, Silnik 430W, Maks. Prędkość 25km/h",
-    "price": "2 599.00 zł",
-    "url": "/site/cat/3681/comp/932996272"
+    "id": 8,
+    "search": "łódź",
+    "name": "LEGO City Policyjna łódź patrolowa 60277",
+    "price": "208.99 zł",
+    "price_lowest": "208.99 zł",
+    "external_url": "https://skapiec.pl/site/red/16466/914551582/258417850",
+    "internal_url": "/site/cat/2600/comp/914551582",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/rNmktk3b2ZmZXJzLzIzMTQxOTI2ODZfMzBlZDc2NTdiN2Y2ZGE3YzljM2M1OGUxZGI3ZjY5ZWIud2VicJOVAsy0AMLDlQIAzLTCw5MJpjJhNzZmZQY/lego-city-policyjna-lodz-patrolowa-60277.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Midex Rower Dziecięcy 16 Cali Miętowo-różowy",
-    "price": "511.00 zł",
-    "url": "/site/cat/2215/comp/923144734"
+    "id": 9,
+    "search": "łódź",
+    "name": "Green Cell Akumulator bezobsługowy AGM VRLA 12V 150Ah do łodzi i instalacji fotowoltaicznych AGM32",
+    "price": "859.00 zł",
+    "price_lowest": "859.00 zł",
+    "external_url": "https://skapiec.pl/site/red/8177/879587185/257220506",
+    "internal_url": "/site/cat/3081/comp/879587185",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/rtQktk3b2ZmZXJzLzIyNzc4NTEzMDRfOGQ1ODI2ZDY5ZjQwMGZiOTk0MDQ2ODU1MGU4YzNhNDEud2VicJOVAsy0AMLDlQIAzLTCw5MJpjBjNGFmNQY/green-cell-akumulator-bezobslugowy-agm-vrla-12v-150ah-do-lodzi-i-instalacji-fotowoltaicznych-agm32.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "ONE FITNESS RW3011 Czarno-pomarańczowy",
-    "price": "285.07 zł",
-    "url": "/site/cat/2207/comp/879610752"
+    "id": 10,
+    "search": "łódź",
+    "name": "Green Cell Akumulator bezobsługowy AGM VRLA 12V 200Ah do łodzi i AGM33",
+    "price": "1 099.70 zł",
+    "price_lowest": "1 099.70 zł",
+    "external_url": "https://skapiec.pl/site/red/5782/883370083/266933533",
+    "internal_url": "/site/cat/55/comp/883370083",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/6dJktk3b2ZmZXJzLzIzMzE5NDgwMzBfNmJjMzY3ZmVkNDFiZGEzM2IyNjM2MTM1MjcyZjVkZjUud2VicJOVAsy0AMLDlQIAzLTCw5MJpjZhYzc4NwY/green-cell-akumulator-bezobslugowy-agm-vrla-12v-200ah-do-lodzi-i-agm33.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "FunFit, Rower treningowy mechaniczny, szaro-czarny",
-    "price": "245.00 zł",
-    "url": "/site/cat/2207/comp/933550873"
+    "id": 11,
+    "search": "łódź",
+    "name": "Martz Przyczepa pod łódź lub skuter wodny MARTZ JET ALU DMC 750 kg M_B10TZ.075.550.170.362_KCNE",
+    "price": "5 259.00 zł",
+    "price_lowest": "5 259.00 zł",
+    "external_url": "https://skapiec.pl/site/red/11485/883933777/179896493",
+    "internal_url": "/site/cat/4116/comp/883933777",
+    "photo": "https://i4.skapiec.pl/1/y7AktkraW1hZ2VzL2VmODRmMDM0Mzg1NzdkNWE4ODQyNmViZGFjOTUyNGE5LmpwZ5OVAsy0AMLDlQIAzLTCw5MJpmUyOGZjYgY/martz-przyczepa-pod-lodz-lub-skuter-wodny-martz-jet-alu-dmc-750-kg-m-b10tz-075-550-170-362-kcne.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "BK6 Czarny",
-    "price": "3 999.00 zł",
-    "url": "/site/cat/3681/comp/918319878"
+    "id": 12,
+    "search": "łódź",
+    "name": "Magic Box Magic Box MojiPops PMPSB216IN10 Figurki I Like Pets ŁÓDŹ PMPSB216IN10",
+    "price": "45.00 zł",
+    "price_lowest": "45.00 zł",
+    "external_url": "https://skapiec.pl/site/red/5782/108328879/269619997",
+    "internal_url": "/site/cat/2614/comp/108328879",
+    "photo": "https://i4.skapiec.pl/1/0j1ktkraW1hZ2VzL2JjYjIzYWY5MWIyZDllOGZhNWYzYjhlN2FmYjcxMjgwLmpwZ5OVAsy0AMLDlQIAzLTCw5MJpjdhYzdhZQY/magic-box-magic-box-mojipops-pmpsb216in10-figurki-i-like-pets-lodz-pmpsb216in10.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "HMS Rower magnetyczny M8750 Biały",
-    "price": "398.00 zł",
-    "url": "/site/cat/2207/comp/882894637"
+    "id": 13,
+    "search": "łódź",
+    "name": "Wiosła szalupowe do łodzi 165,180+ dulki pałąkowe + osłony 40mm John Paddle (komplet 2 sztuki) - 165 cm",
+    "price": "279.00 zł",
+    "price_lowest": "279.00 zł",
+    "external_url": "https://skapiec.pl/site/red/16184/932836594/285009296",
+    "internal_url": "/site/cat/2203/comp/932836594",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/pQPktk3b2ZmZXJzLzIzMjQ1ODE5MDlfYTRhNGMxZmMyNGE5MzRjZWI2ZTNhOWI5NjE2NmFhZjMud2VicJOVAsy0AMLDlQIAzLTCw5MJpmUwNWYwMwY/wiosla-szalupowe-do-lodzi-165-180-dulki-palakowe-oslony-40mm-john-paddle-komplet-2-sztuki-165-cm.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Lankeleisi T750 Plus Big Fork Żółty",
-    "price": "5 999.00 zł",
-    "url": "/site/cat/3681/comp/918319867"
+    "id": 14,
+    "search": "łódź",
+    "name": "Zabawka Motorówka Zdalnie Sterowana Łódź Pilot Rc U436",
+    "price": "67.20 zł",
+    "price_lowest": "67.20 zł",
+    "external_url": "https://skapiec.pl/site/red/5782/936742175/284778574",
+    "internal_url": "/site/cat/2609/comp/936742175",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/iEqktk3b2ZmZXJzLzIzMjU0MzgwMTlfODM5N2Y5YzdkMTk2NTNhYmYwYTJmMTJkM2YzODFlZTAud2VicJOVAsy0AMLDlQIAzLTCw5MJpjU1YTlkMAY/zabawka-motorowka-zdalnie-sterowana-lodz-pilot-rc-u436.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "ONESPORT OT29 Electric Bike 20*4.0 Fat Tires 250W (Peak 750W) Rear Drive 25-32km/h Max Speed 48V 17Ah Battery 90-120km R",
-    "price": "4 899.00 zł",
-    "url": "/site/cat/3681/comp/932991518"
+    "id": 15,
+    "search": "łódź",
+    "name": "LEGO City Łódź strażacka 60373",
+    "price": "61.00 zł",
+    "price_lowest": "61.00 zł",
+    "external_url": "https://skapiec.pl/site/red/16956/918244729/274381144",
+    "internal_url": "/site/cat/2600/comp/918244729",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/uSaktk3b2ZmZXJzLzIzMTg4MzIwMzBfOTYzYzg4MDU4ODA3ZjJiNjA0ZTQ1YTRlNTBiMjExMmUud2VicJOVAsy0AMLDlQIAzLTCw5MJpjRlNGFjNQY/lego-city-lodz-strazacka-60373.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Duotts C29 Czarno-niebieski",
-    "price": "3 399.00 zł",
-    "url": "/site/cat/3681/comp/913731729"
+    "id": 16,
+    "search": "łódź",
+    "name": "Motorówka Łódź Łódka Zdalnie Sterowana Rc + Pilot",
+    "price": "129.90 zł",
+    "price_lowest": "129.90 zł",
+    "external_url": "https://skapiec.pl/site/red/5782/926320816/277009387",
+    "internal_url": "/site/cat/2609/comp/926320816",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/MGzktk3b2ZmZXJzLzIzMjUzMDMwNjJfMGYzYWUxZGM5NzMyZWZlZmEyODlmOWNmM2IzMDI1ZmEud2VicJOVAsy0AMLDlQIAzLTCw5MJpmEwYTc4MgY/motorowka-lodz-lodka-zdalnie-sterowana-rc-pilot.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "GOETZE Style 24 cale Pudrowy róż",
-    "price": "899.00 zł",
-    "url": "/site/cat/2215/comp/922607232"
+    "id": 17,
+    "search": "łódź",
+    "name": "﻿Ogromny Lotniskowiec Łódź Pojazdy Wojskowe Dźwięk 86 cm",
+    "price": "115.19 zł",
+    "price_lowest": "115.19 zł",
+    "external_url": "https://skapiec.pl/site/red/5782/936735658/293104794",
+    "internal_url": "/site/cat/2605/comp/936735658",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/1Nhktk3b2ZmZXJzLzIzNzA4NTI1NjVfODdiNTEyZDBlYWNlNGU2YjZhZGE4ZWM5NjM2MjZiOWYud2VicJOVAsy0AMLDlQIAzLTCw5MJpjc1ZjQzYgY/ogromny-lotniskowiec-lodz-pojazdy-wojskowe-dzwiek-86-cm.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "LEGO City Rower policyjny - szkolenie 30638",
-    "price": "13.00 zł",
-    "url": "/site/cat/2600/comp/921994635"
+    "id": 18,
+    "search": "łódź",
+    "name": "LEGO SUPER HEROES Kozia łódź Nowa 76208",
+    "price": "140.00 zł",
+    "price_lowest": "140.00 zł",
+    "external_url": "https://skapiec.pl/site/red/16466/899979973/257801772",
+    "internal_url": "/site/cat/2600/comp/899979973",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/HsVktk3b2ZmZXJzLzIzMTUwNDM4OTdfZDQ5ODZmYTI5Y2M2Yjg0ZDYzZjNhMDA3NTcxZDc3ZDEud2VicJOVAsy0AMLDlQIAzLTCw5MJpjQ1ZGU1YgY/lego-super-heroes-kozia-lodz-nowa-76208.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Spokey Onego+",
-    "price": "339.00 zł",
-    "url": "/site/cat/2207/comp/869114763"
+    "id": 19,
+    "search": "łódź",
+    "name": "Lego CITY Łódź do nurkowania badacza 60377",
+    "price": "89.00 zł",
+    "price_lowest": "89.00 zł",
+    "external_url": "https://skapiec.pl/site/red/16956/923413971/274377594",
+    "internal_url": "/site/cat/2600/comp/923413971",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/Vyxktk3b2ZmZXJzLzIzMzg5NTkyMzNfNjAxN2ZiZDhkNTM5ZWE1MTIwYjQyZmFmODI0MjA4Mjkud2VicJOVAsy0AMLDlQIAzLTCw5MJpmNhYzBlNgY/lego-city-lodz-do-nurkowania-badacza-60377.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   },
   {
-    "Name": "Spokey Onego+",
-    "price": "359.99 zł",
-    "url": "/site/cat/2207/comp/869114878"
+    "id": 20,
+    "search": "łódź",
+    "name": "LEGO DUPLO Przygoda w łodzi podwodnej 10910",
+    "price": "40.00 zł",
+    "price_lowest": "40.00 zł",
+    "external_url": "https://skapiec.pl/site/red/16466/867500005/257758741",
+    "internal_url": "/site/cat/2600/comp/867500005",
+    "photo": "https://ocdn.eu/photo-offers-prod-transforms/1/WS6ktk3b2ZmZXJzLzIzMzA1OTE3MDdfNTBhYmZhNDk0ZTZkOTNlNTlhNTNiM2U5MDc1YWI1MWUud2VicJOVAsy0AMLDlQIAzLTCw5MJpmI4YzQzYgY/lego-duplo-przygoda-w-lodzi-podwodnej-10910.jpg",
+    "update": 1709245703.6940424,
+    "update_lowest": 1709245703.6940424
   }
 ]
