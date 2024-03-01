@@ -1,11 +1,30 @@
-
 import './App.css';
+import SearchIcon from './search.svg';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Skapiec</h1>
-    </div>
+      <div className="app">
+        <h1>Skapiec</h1>
+
+        <div className="search">
+          <input
+           placeholder="Wyszukaj"
+           //value="rower"
+           onChange={()=> {}}
+           />
+
+           <img
+            src={SearchIcon}
+            alt="search"
+            onClick={() => {}} //jeszcze nic nie robi
+            />
+        </div>
+
+        <div className="container">
+
+        </div>
+      </div>
   );
 }
 
