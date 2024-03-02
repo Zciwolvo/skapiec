@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 import json
-from scraper import scrapping
+from Scraper import scrapping
 import time
 import re
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 JSON_PATH = "./data.json"
 
 def read_json_file(file_path):
