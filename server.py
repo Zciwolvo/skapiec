@@ -1,81 +1,124 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 import json
 from Scraper import scrapping
-import time
+from datetime import datetime
 import re
 from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app)
-JSON_PATH = "./data.json"
+skapiec_blueprint = Blueprint("dataset", __name__)
 
+# Create a Flask application instance
+skapiec_blueprint = Flask(__name__)
+
+# Enable CORS for all routes of the Flask skapiec_blueprint
+CORS(skapiec_blueprint)
+
+# Define the path to the JSON file
+JSON_PATH = "./skapiec_data.json"
+
+# Function to read data from a JSON file
 def read_json_file(file_path):
+    # Open the JSON file in read mode and load the data into a Python dictionary
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return data
 
+# Function to write data to a JSON file
 def write_json_file(file_path, data):
+    # Open the JSON file in write mode and dump the data to the file
+    # with UTF-8 encoding, ensuring special characters are handled properly
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+# Function to find the index of an item with a specific URL in a list of dictionaries
 def find_index(data, url):
+    # Iterate through the list of dictionaries and find the index of the dictionary
+    # with the 'internal_url' matching the provided URL
     for i, item in enumerate(data):
         if item['internal_url'] == url:
             return i
-        
+
+# Function to extract a money value from a string
 def extract_money_value(money_string):
+    # Define a regular expression pattern to match numbers with or without decimals
     pattern = r'\d+(\.\d+)?'
+    # Search for a match in the input string using the regular expression pattern
     match = re.search(pattern, money_string)
     if match:
+        # If a match is found, convert it to a float and return the value
         return float(match.group())
     else:
+        # If no match is found, return None
         return None
 
 
-@app.route('/scrape', methods=['GET'])
+# localhost:5000/scrape?phrase=rower
+@skapiec_blueprint.route('/scrape', methods=['GET'])  # Define a route '/scrape' accessible via GET method
 def index_get():
-    phrase = request.args.get('phrase')
-    if phrase:
-        result = scrapping(phrase)
-        data = read_json_file(JSON_PATH)
+    phrase = request.args.get('phrase')  # Get the value of the 'phrase' query parameter from the request
+
+    if phrase:  # Check if the 'phrase' parameter is provided
+        result = scrapping(phrase)  # Call the scrapping function with the provided phrase
+        data = read_json_file(JSON_PATH)  # Read existing data from the JSON file
+        current_datetime = datetime.now()
+
+        # Iterate through the items in the result
         for item in result:
+            # Check if any item with the same 'internal_url' exists in the data
             if any(x['internal_url'] == item['internal_url'] for x in data):
+                # If item exists, find its index in the data list
                 index_of_item = find_index(data, item['internal_url'])
+
+                # Extract new and old prices from the item and existing data
                 price_new = extract_money_value(item['price'])
                 price_old = extract_money_value(data[index_of_item]['price_lowest'])
+
+                # Compare new price with old lowest price
                 if price_new <= price_old:
+                    # If new price is lower or equal, update lowest price and timestamps
                     data[index_of_item]['price_lowest'] = item['price']
                     data[index_of_item]['price'] = item['price']
-                    data[index_of_item]['update_lowest'] = time.time()
-                    data[index_of_item]['update'] = time.time()
+                    data[index_of_item]['update_lowest'] = current_datetime.strftime('%Y.%m.%d %H:%M')
+                    data[index_of_item]['update'] = current_datetime.strftime('%Y.%m.%d %H:%M')
                 else:
+                    # If new price is higher, update price and timestamp
                     data[index_of_item]['price'] = item['price']
-                    data[index_of_item]['update'] = time.time()
+                    data[index_of_item]['update'] = current_datetime.strftime('%Y.%m.%d %H:%M')
             else:
+                # If item doesn't exist in data, create a new data_item dictionary
                 data_item = {
-                    'id': len(data)+1,
-                    'search': phrase,
-                    'name': item['name'],
-                    'price': item['price'],
-                    'price_lowest': item['price'],
-                    'external_url': item['external_url'],
-                    'internal_url': item['internal_url'],
-                    'photo': item['photo'],
-                    'update': time.time(),
-                    'update_lowest': time.time()
+                    'id': len(data)+1,  # Generate a unique ID for the item
+                    'search': phrase,  # Store the search phrase
+                    'name': item['name'],  # Store the item name
+                    'price': item['price'],  # Store the item price
+                    'price_lowest': item['price'],  # Store the item lowest price
+                    'external_url': item['external_url'],  # Store the external URL
+                    'internal_url': item['internal_url'],  # Store the internal URL
+                    'photo': item['photo'],  # Store the item photo
+                    'update': current_datetime.strftime('%Y.%m.%d %H:%M'),  # Store the current timestamp as update time
+                    'update_lowest': current_datetime.strftime('%Y.%m.%d %H:%M')  # Store the current timestamp as update lowest time
                 }
+                # Append the new data_item to the data list
                 data.append(data_item)
+
+        # Write the updated data back to the JSON file
         write_json_file(JSON_PATH, data)
-        return 'Data saved to JSON file'
+        return 'Data saved to JSON file'  # Return success message
     else:
-        return 'Missing phrase parameter', 400
+        return 'Missing phrase parameter', 400  # Return error message if 'phrase' parameter is missing
 
-
-@app.route('/get_data', methods=['GET'])
+# http://localhost:5000/get_data?phrase=rower
+@skapiec_blueprint.route('/get_data', methods=['GET'])  # Define a route '/get_data' accessible via GET method
 def get_data():
-    data = read_json_file(JSON_PATH)
-    print(data)
-    return jsonify(data)
+    phrase = request.args.get('phrase')  # Get the value of the 'phrase' query parameter from the request
+
+    data = read_json_file(JSON_PATH)  # Read existing data from the JSON file
+
+    # Filter the data to include only records where the 'search' field matches the provided phrase
+    filtered_data = [record for record in data if record.get('search') == phrase]
+
+    # Return the filtered data as a JSON response
+    return jsonify(filtered_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    skapiec_blueprint.run(debug=True)
