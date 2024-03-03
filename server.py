@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify, Blueprint
 import json
-from Scraper import scrapping
+from scraper import scrapping
 from datetime import datetime
 import re
 from flask_cors import CORS
 
-skapiec_blueprint = Blueprint("dataset", __name__)
+skapiec_blueprint = Blueprint("server", __name__)
 
 # Create a Flask application instance
 skapiec_blueprint = Flask(__name__)
@@ -54,7 +54,7 @@ def extract_money_value(money_string):
 
 # localhost:5000/scrape?phrase=rower
 @skapiec_blueprint.route('/scrape', methods=['GET'])  # Define a route '/scrape' accessible via GET method
-def index_get():
+def scrape():
     phrase = request.args.get('phrase')  # Get the value of the 'phrase' query parameter from the request
 
     if phrase:  # Check if the 'phrase' parameter is provided
@@ -115,10 +115,13 @@ def get_data():
     data = read_json_file(JSON_PATH)  # Read existing data from the JSON file
 
     # Filter the data to include only records where the 'search' field matches the provided phrase
-    filtered_data = [record for record in data if record.get('search') == phrase]
+    if phrase:
+        filtered_data = [record for record in data if record.get('search') == phrase]
 
-    # Return the filtered data as a JSON response
-    return jsonify(filtered_data)
+        # Return the filtered data as a JSON response
+        return jsonify(filtered_data)
+    else:
+        return jsonify(data)
 
 if __name__ == '__main__':
     skapiec_blueprint.run(debug=True)
