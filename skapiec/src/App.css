@@ -63,3 +63,8 @@ h1 {
   flex-wrap: wrap;
 }
 
+.item {
+  width: 50em;
+  height: 50em;
+}
+
