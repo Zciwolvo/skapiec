@@ -2,15 +2,7 @@
 
 ## TODO
 
-- Aplikacja desktopowa
-  - Tkinter/Avalonia
 - Baza danych
-  - Relational/Non relational?
-- Server
-  - Flask
-- Scrapper
-  - Python
-- Testy
 
 ## Idea
 

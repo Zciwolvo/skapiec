@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+from urllib.parse import urlparse
 
 
 # Removing html tags
@@ -10,6 +11,13 @@ def remove_html_tags(text:str):
     """
     clean = re.compile('<.*?>')
     return re.sub(clean, '', text)
+
+def is_skapiec_url(url:str)->bool:
+    """
+    Method takes url and check if it is from skapiec, if yes returns True, if no returns False
+    """
+    return url.startswith('/site/')
+
 
 # Scraping method
 def scrapping(phrase:str):
@@ -66,13 +74,14 @@ if __name__ == '__main__':
     # Take phrase from user and scrap!
     search_phrase = input("Podaj frazę: ")
     result = scrapping(search_phrase) 
-
+    example_url = "https://www.youtube.com/"
     if result:
         for item in result:
             skapiec_url = item['internal_url'] if item['internal_url'] else "Brak"
             shop_url = item['external_url'] if item['external_url'] else "brak"
+            is_skapiec = is_skapiec_url(skapiec_url)
             # description = scrapDescription(skURL)
             # if description:
-            print(f"Nazwa: {item['name']}, Cena: {item['price']} zł, URL wewnętrzne: {'skapiec.pl'+skapiec_url}, URL zewnętrzne: {shop_url}, Zdjęcie: {item['photo']},\n")
+            print(f"Nazwa: {item['name']}, Cena: {item['price']} zł, URL wewnętrzne: {'skapiec.pl'+skapiec_url}, URL zewnętrzne: {shop_url}, Zdjęcie: {item['photo']}, Czy jest z skapca: {is_skapiec}\n")
     else:
         print("Brak wyników")
