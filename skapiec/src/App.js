@@ -44,9 +44,9 @@ const App = () => {
   
           <div className="container">
             {items.map((item) => (
-                  <div className="item" key={item.id}>
+                  <div className="item" key={item}>
                   <div>
-                    <p>{item.price}</p>
+                    
                   </div>
             
                   <div>
