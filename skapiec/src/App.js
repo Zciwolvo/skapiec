@@ -52,12 +52,14 @@ const App = () => {
                   <div>
                     <img src={item.photo} alt={item.name} />
                   </div>
-            
-                  <div>
+                  <div className="Text-container">
                     <span>{item.price}</span>
                     <h3>{item.name}</h3>
                   </div>
+                  
                 </div>
+                
+                
             ))}
           </div>
       </div>

@@ -93,8 +93,8 @@ h1 {
 }
 
 .item {
-  width: calc(20% - 3rem); 
-  height: 460px;
+  width: 250px; 
+  height: 250px;
   margin: 1.5rem;
   position: relative;
   border-radius: 12px;
@@ -205,4 +205,11 @@ h1 {
     width: "100%";
     margin: 1rem;
   }
+}
+.text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
 }
