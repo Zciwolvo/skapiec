@@ -4,6 +4,8 @@ from Scraper import scrapping
 from datetime import datetime
 import re
 from flask_cors import CORS
+from pymongo import MongoClient
+from pymongo.server_api import ServerApi
 
 skapiec_blueprint = Blueprint("server", __name__)
 
@@ -15,6 +17,14 @@ CORS(skapiec_blueprint)
 
 # Define the path to the JSON file
 JSON_PATH = "./skapiec_data.json"
+
+
+uri = "mongodb+srv://skapiec.4ju5ocq.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority&appName=Skapiec"
+certificate_file = './certs/X509-cert-3621885173140152299.pem'
+
+# Connect to MongoDB
+client = MongoClient(uri, tls=True, tlsCertificateKeyFile=certificate_file, server_api=ServerApi('1'))
+db = client.get_database("Skapiec")
 
 # Function to read data from a JSON file
 def read_json_file(file_path):
@@ -29,6 +39,23 @@ def write_json_file(file_path, data):
     # with UTF-8 encoding, ensuring special characters are handled properly
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+        
+def read_from_mongodb(collection_name):
+    # Get the collection
+    collection = db[collection_name]
+    # Query all documents from the collection excluding the _id field
+    documents = collection.find({}, {'_id': 0})
+    # Convert documents to JSON
+    json_data = [doc for doc in documents]
+    return json_data
+
+
+def write_to_mongodb(collection_name, json_data):
+    # Get the collection
+    db[collection_name].delete_many({})
+    collection = db[collection_name]
+    # Insert JSON data into the collection
+    collection.insert_many(json_data)
 
 # Function to find the index of an item with a specific URL in a list of dictionaries
 def find_index(data, url):
@@ -59,13 +86,18 @@ def scrape():
 
     if phrase:  # Check if the 'phrase' parameter is provided
         result = scrapping(phrase)  # Call the scrapping function with the provided phrase
-        data = read_json_file(JSON_PATH)  # Read existing data from the JSON file
+        data = read_from_mongodb("skapiec")  # Read existing data from the JSON file
         current_datetime = datetime.now()
+        
+        try:
+            check = any(x['internal_url'] == item['internal_url'] for x in data)
+        except KeyError:
+            check = False
 
         # Iterate through the items in the result
         for item in result:
             # Check if any item with the same 'internal_url' exists in the data
-            if any(x['internal_url'] == item['internal_url'] for x in data):
+            if check:
                 # If item exists, find its index in the data list
                 index_of_item = find_index(data, item['internal_url'])
 
@@ -102,7 +134,7 @@ def scrape():
                 data.append(data_item)
 
         # Write the updated data back to the JSON file
-        write_json_file(JSON_PATH, data)
+        write_to_mongodb("skapiec", data)
         return 'Data saved to JSON file'  # Return success message
     else:
         return 'Missing phrase parameter', 400  # Return error message if 'phrase' parameter is missing
@@ -112,7 +144,7 @@ def scrape():
 def get_data():
     phrase = request.args.get('phrase')  # Get the value of the 'phrase' query parameter from the request
 
-    data = read_json_file(JSON_PATH)  # Read existing data from the JSON file
+    data = read_from_mongodb("skapiec") # Read existing data from the JSON file
 
     # Filter the data to include only records where the 'search' field matches the provided phrase
     if phrase:
