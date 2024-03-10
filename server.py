@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, Blueprint
 import json
-from scraper import scrapping
+from Scraper import scrapping
 from datetime import datetime
 import re
 from flask_cors import CORS
