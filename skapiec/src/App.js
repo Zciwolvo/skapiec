@@ -27,14 +27,13 @@ const App = () => {
     
     return (
       <div className="app">
-        <h1>Skrapiec</h1>
-  
-        <div className="search">
-          <input
-            value={searchItem}
-            onChange={(e) => setSearchItem(e.target.value)}
-            placeholder="Search for items"
-          />
+          <h1>Skrapiec</h1>
+          <div className="search">
+            <input
+              value={searchItem}
+              onChange={(e) => setSearchItem(e.target.value)}
+              placeholder="Search for items"
+            />
           <img
             src={SearchIcon}
             alt="search"
@@ -45,21 +44,22 @@ const App = () => {
           <div className="container">
             {items.map((item) => (
                   <div className="item" key={item}>
-                  <div>
                     
-                  </div>
-            
-                  <div>
-                    <img src={item.photo} alt={item.name} />
-                  </div>
-                  <div className="Text-container">
-                    <span>{item.price}</span>
-                    <h3>{item.name}</h3>
-                  </div>
-                  
-                </div>
-                
-                
+                    <div className="top">
+                    
+                    </div>
+                      
+                    <div className="img">
+                      <a href={item.external_url} target="_blank" rel="noopener noreferrer"> {/* Added anchor tag */}
+                      <img src={item.photo} alt={item.name} />
+                      </a>
+                    </div>
+
+                    <div className="Text-container">
+                      <span>{item.price}</span>
+                      <h3>{item.name}</h3>
+                    </div>
+                </div>                        
             ))}
           </div>
       </div>
