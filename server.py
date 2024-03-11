@@ -83,20 +83,20 @@ def extract_money_value(money_string):
 @skapiec_blueprint.route('/scrape', methods=['GET'])  # Define a route '/scrape' accessible via GET method
 def scrape():
     phrase = request.args.get('phrase')  # Get the value of the 'phrase' query parameter from the request
+    print(phrase)
 
     if phrase:  # Check if the 'phrase' parameter is provided
         result = scrapping(phrase)  # Call the scrapping function with the provided phrase
         data = read_from_mongodb("skapiec")  # Read existing data from the JSON file
         current_datetime = datetime.now()
-        
-        try:
-            check = any(x['internal_url'] == item['internal_url'] for x in data)
-        except KeyError:
-            check = False
 
         # Iterate through the items in the result
         for item in result:
             # Check if any item with the same 'internal_url' exists in the data
+            try:
+                check = any(x['internal_url'] == item['internal_url'] for x in data)
+            except KeyError:
+                check = False
             if check:
                 # If item exists, find its index in the data list
                 index_of_item = find_index(data, item['internal_url'])
