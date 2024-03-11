@@ -42,22 +42,19 @@ const App = () => {
         </div>
   
           <div className="container">
-            {items.map((item) => (
+              {items.map((item) => (
                   <div className="item" key={item}>
-                    
                     <div className="top">
-                    
                     </div>
                       
-                    <div className="img">
-                      <a href={item.external_url} target="_blank" rel="noopener noreferrer"> {/* Added anchor tag */}
-                      <img src={item.photo} alt={item.name} />
-                      </a>
+                    <a href={item.external_url} target="_blank" rel="noopener noreferrer"> {/* Added anchor tag */}
+                    <div className="img" style={{ backgroundImage: `url('${item.photo}')` }}>
                     </div>
+                      </a>
 
                     <div className="Text-container">
-                      <span>{item.price}</span>
                       <h3>{item.name}</h3>
+                      <span>{item.price}</span>
                     </div>
                 </div>                        
             ))}
