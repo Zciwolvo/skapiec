@@ -13,13 +13,19 @@ const App = () => {
   
     const searchItems = async (search) => {
       
-      await fetch(`https://igorgawlowicz.pythonanywhere.com/skapiec/scrape?phrase=${search}`);
+      await fetch(`http://127.0.0.1:5000/get_data?phrase=${search}`);//to jest zepsute, zmienilem na potrzeby testow
 
-      const response = await fetch(`https://igorgawlowicz.pythonanywhere.com/skapiec/get_data?phrase=${search}`);
+      const response = await fetch(`http://127.0.0.1:5000/get_data?phrase=${search}`);//to jest zepsute, zmienilem na potrzeby testow
       const data = await response.json(); 
       
       setItems(data);
       console.log(search)
+    };
+
+    const handleKeyPress = (e) => {
+      if (e.key === 'Enter') {
+        searchItems(searchItem);
+      }
     };
 
 
@@ -33,11 +39,13 @@ const App = () => {
               value={searchItem}
               onChange={(e) => setSearchItem(e.target.value)}
               placeholder="Search for items"
+              onKeyDown={handleKeyPress}
             />
           <img
             src={SearchIcon}
             alt="search"
             onClick={() => searchItems(searchItem)}
+            
           />
         </div>
   
@@ -47,10 +55,9 @@ const App = () => {
                     <div className="top">
                     </div>
                       
-                    <a href={item.external_url} target="_blank" rel="noopener noreferrer"> {/* Added anchor tag */}
-                    <div className="img" style={{ backgroundImage: `url('${item.photo}')` }}>
-                    </div>
-                      </a>
+                    <a href={item.external_url} target="_blank" rel="noopener noreferrer">
+                    <div className="img" style={{ backgroundImage: `url('${item.photo}')` }}> </div>
+                    </a>
 
                     <div className="Text-container">
                       <h3>{item.name && item.name.split(' ').slice(0,6).join(' ')}</h3>
