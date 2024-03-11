@@ -53,7 +53,7 @@ const App = () => {
                       </a>
 
                     <div className="Text-container">
-                      <h3>{item.name}</h3>
+                      <h3>{item.name && item.name.split(' ').slice(0,6).join(' ')}</h3>
                       <span>{item.price}</span>
                     </div>
                 </div>                        
