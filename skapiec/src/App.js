@@ -6,20 +6,29 @@ const App = () => {
   //fetching data
   const [searchItem, setSearchItem] = useState("");
   const [items, setItems] = useState([]);
+  const [cachedData, setCachedData] = useState(null);
   useEffect(() => {
-    searchItems("");
+    const cachedItems = JSON.parse(localStorage.getItem("items"));
+    if (cachedItems) {
+      setItems(cachedItems);
+      setCachedData(cachedItems);
+    } else {
+      searchItems("");
+    }
   }, []);
 
   const searchItems = async (search) => {
-    await fetch(`http://127.0.0.1:5000/scrape?phrase=${search}`); //to jest zepsute, zmienilem na potrzeby testow
-
-    const response = await fetch(
-      `http://127.0.0.1:5000/get_data?phrase=${search}`
-    ); //to jest zepsute, zmienilem na potrzeby testow
-    const data = await response.json();
-
-    setItems(data);
-    console.log(search);
+    if (!cachedData || (cachedData && !cachedData.some(item => item.name.includes(search)))) {
+      await fetch(`http://127.0.0.1:5000/scrape?phrase=${search}`);
+      const response = await fetch(`http://127.0.0.1:5000/get_data?phrase=${search}`);
+      const data = await response.json();
+      localStorage.setItem("items", JSON.stringify(data));
+      setItems(data);
+      setCachedData(data);
+    } else {
+      const filteredItems = cachedData.filter(item => item.name.includes(search));
+      setItems(filteredItems);
+    }
   };
 
   const handleKeyPress = (e) => {
