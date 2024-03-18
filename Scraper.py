@@ -51,13 +51,7 @@ def scrapping(phrase:str):
                     product_info.append({'name': name, 'price': price_value, 'internal_url': skapiec_url, 'photo': photo, 'external_url': shop_url, 'page': page})
             else:
                 print("Number of products and prices doesn't match.")
-            
-            # Check if there is a next page
-            next_button = soup.find('a', class_='pagination__next')
-            if next_button is None:
-                break  # No next page, stop scraping
-            else:
-                page += 1  # Move to the next page
+            page += 1  # Move to the next page     
         else:
             print(f"Failed to fetch page {page}. Status code: {r.status_code}")
             break
