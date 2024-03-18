@@ -19,8 +19,8 @@ const App = () => {
 
   const searchItems = async (search) => {
     if (!cachedData || (cachedData && !cachedData.some(item => item.name.includes(search)))) {
-      await fetch(`http://127.0.0.1:5000/scrape?phrase=${search}`);
-      const response = await fetch(`http://127.0.0.1:5000/get_data?phrase=${search}`);
+      await fetch(`https://www.igorgawlowicz.pl/skapiec/scrape?phrase=${search}`);
+      const response = await fetch(`https://www.igorgawlowicz.pl/skapiec/get_data?phrase=${search}`);
       const data = await response.json();
       localStorage.setItem("items", JSON.stringify(data));
       setItems(data);
