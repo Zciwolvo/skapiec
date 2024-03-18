@@ -18,17 +18,14 @@ const App = () => {
   }, []);
 
   const searchItems = async (search) => {
-    if (!cachedData || (cachedData && !cachedData.some(item => item.name.includes(search)))) {
+
       await fetch(`https://www.igorgawlowicz.pl/skapiec/scrape?phrase=${search}`);
-      const response = await fetch(`https://www.igorgawlowicz.pl/skapiec/get_data?phrase=${search}`);
+      const response = await fetch(`https://www.igorgawlowicz.pl/skapiec/get_data?phrase=${search}&pages=${1}`);
       const data = await response.json();
       localStorage.setItem("items", JSON.stringify(data));
       setItems(data);
       setCachedData(data);
-    } else {
-      const filteredItems = cachedData.filter(item => item.name.includes(search));
-      setItems(filteredItems);
-    }
+
   };
 
   const handleKeyPress = (e) => {

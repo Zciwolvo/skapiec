@@ -62,7 +62,7 @@ h1 {
   grid-auto-rows:(150px, auto);
   grid-column-gap: 150px;
   row-gap:20px;
-
+  justify-items: center;
 }
 
  .search button {
@@ -133,7 +133,7 @@ h1 {
 }
 
 .item div:nth-of-type(2) {
-  background-color: #553604;
+  background-color: #343739;
   padding: 16px 24px 24px 24px;
   bottom: 0;
   right: 0;
