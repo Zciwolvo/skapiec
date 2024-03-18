@@ -18,7 +18,7 @@ def is_skapiec_url(url:str)->bool:
     return url.startswith('/site/')
 
 # Scraping method with automatic pagination
-def scrapping(phrase:str):
+def scrapping(phrase:str, page: int):
     """
     This function takes a phrase as an argument, searches for items on the skapiec.pl website using BeautifulSoup. 
     It parses the data, finds specific data by HTML tags: name, price, PNG, internal URL, external URL,
