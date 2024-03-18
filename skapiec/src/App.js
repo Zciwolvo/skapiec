@@ -6,7 +6,7 @@ const App = () => {
   //fetching data
   const [searchItem, setSearchItem] = useState("");
   const [items, setItems] = useState([]);
-  useEffect(() => {
+      useEffect(() => {
       searchItems("");
   }, []);
 
@@ -25,7 +25,7 @@ const App = () => {
         });
         console.log('Photos URLs saved to local storage:', data.map(item => item.photo));
       }
-      
+      //piotrek to cipa JEBANA I MNIE WKURWIA
   };
 
   const handleKeyPress = (e) => {
