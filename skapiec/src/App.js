@@ -6,15 +6,8 @@ const App = () => {
   //fetching data
   const [searchItem, setSearchItem] = useState("");
   const [items, setItems] = useState([]);
-  const [cachedData, setCachedData] = useState(null);
   useEffect(() => {
-    const cachedItems = JSON.parse(localStorage.getItem("items"));
-    if (cachedItems) {
-      setItems(cachedItems);
-      setCachedData(cachedItems);
-    } else {
       searchItems("");
-    }
   }, []);
 
   const searchItems = async (search) => {
@@ -22,10 +15,17 @@ const App = () => {
       await fetch(`https://www.igorgawlowicz.pl/skapiec/scrape?phrase=${search}`);
       const response = await fetch(`https://www.igorgawlowicz.pl/skapiec/get_data?phrase=${search}&pages=${1}`);
       const data = await response.json();
-      localStorage.setItem("items", JSON.stringify(data));
       setItems(data);
-      setCachedData(data);
-
+      
+      if (data && Array.isArray(data) && data.length > 0) {
+        data.forEach((item, index) => {
+          if (item.photo) {
+            localStorage.setItem(`photoURL_${index}`, item.photo);
+          }
+        });
+        console.log('Photos URLs saved to local storage:', data.map(item => item.photo));
+      }
+      
   };
 
   const handleKeyPress = (e) => {
