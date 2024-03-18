@@ -25,7 +25,7 @@ const App = () => {
         });
         console.log('Photos URLs saved to local storage:', data.map(item => item.photo));
       }
-      //piotrek to cipa JEBANA I MNIE WKURWIA
+      
   };
 
   const handleKeyPress = (e) => {
