@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/skapiec/static/css/main.e0d82e75.css",
+    "main.js": "/skapiec/static/js/main.b0cf151e.js",
+    "index.html": "/skapiec/index.html",
+    "static/media/search.svg": "/skapiec/static/media/search.8ff5426bc87a3f731164f42e41b7144b.svg",
+    "main.e0d82e75.css.map": "/skapiec/static/css/main.e0d82e75.css.map",
+    "main.b0cf151e.js.map": "/skapiec/static/js/main.b0cf151e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0d82e75.css",
+    "static/js/main.b0cf151e.js"
+  ]
+}
