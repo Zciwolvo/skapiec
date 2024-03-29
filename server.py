@@ -83,12 +83,16 @@ def extract_money_value(money_string):
 @skapiec_blueprint.route('/scrape', methods=['GET'])  # Define a route '/scrape' accessible via GET method
 def scrape():
     phrase = request.args.get('phrase')  # Get the value of the 'phrase' query parameter from the request
-    print(phrase)
+    pages = request.args.get('pages')
+
+    if not pages:
+        pages = 1
 
     if phrase:  # Check if the 'phrase' parameter is provided
-        result = scrapping(phrase)  # Call the scrapping function with the provided phrase
+        result = scrapping(phrase, pages)  # Call the scrapping function with the provided phrase
         data = read_from_mongodb("skapiec")  # Read existing data from the JSON file
         current_datetime = datetime.now()
+
 
         # Iterate through the items in the result
         for item in result:

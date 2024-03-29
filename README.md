@@ -7,7 +7,7 @@ API: [https://www.igorgawlowicz.pl/skapiec/get_data]
 
 Aby uruchomić projekt lokalnie należy zmienić URL podane w fetchach w `skapiec/skapiec/src/app.js` w 15 i 16 linijce, zmieniamy:
 
-`https://www.igorgawlowicz.pl/skapiec/scrape?phrase=${search}` na `http://127.0.0.1:5000/scrape?phrase=${search}`
+`https://www.igorgawlowicz.pl/skapiec/scrape?phrase=${search}&page=${selectedPage}` na `http://127.0.0.1:5000/scrape?phrase=${search}&page=${selectedPage}`
 
 oraz
 
